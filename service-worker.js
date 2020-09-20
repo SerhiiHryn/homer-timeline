@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/homer-timeline/precache-manifest.6a735ed36e03de21359c7ddf4c172c92.js"
+  "/homer-timeline/precache-manifest.f4ec9be6537d7a78e5278f99ed8f8d6a.js"
 );
 
 self.addEventListener('message', (event) => {
