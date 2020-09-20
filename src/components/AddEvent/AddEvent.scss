@@ -1,0 +1,84 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.add-event-container {
+  @include flexCenter;
+  position: relative;
+}
+
+.add-event-container::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  border-left: 1pt solid #ccc;
+  z-index: 2;
+}
+
+.backdrop {
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s ease-out;
+}
+
+.backdrop.show {
+  overflow: scroll;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.add-button {
+  margin-bottom: 24pt;
+  z-index: 3;
+
+  img {
+    height: $add-event-button-size;
+    width: $add-event-button-size;
+  }
+
+  .event-form {
+    display: none;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+    background-color: white;
+    padding: 10pt 15pt;
+    border-radius: 7pt;
+    box-shadow: 0px 0px 35px 10px rgba(0, 0, 0, 0.3);
+
+    &__cancel-btn {
+      position: absolute;
+      top: 3px;
+      right: 10px;
+      color: #ccc;
+      cursor: pointer;
+
+      &:hover {
+        color: #5f5f5f;
+      }
+    }
+
+    &__title {
+      @include flexCenter;
+      font-weight: 700;
+      margin-bottom: 5pt;
+    }
+
+    &__fields {
+      margin-bottom: 10pt;
+    }
+
+    &__save-button {
+      @include flexCenter;
+    }
+  }
+
+  .event-form.show {
+    display: block;
+  }
+}

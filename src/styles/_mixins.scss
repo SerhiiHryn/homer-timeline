@@ -1,0 +1,20 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin statesLine($borderStyle) {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  border-left: 1pt $borderStyle #ccc;
+  z-index: 2;
+}

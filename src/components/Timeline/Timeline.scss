@@ -1,0 +1,19 @@
+@import "../../styles/mixins";
+
+.timeline {
+  position: relative;
+  width: 100%;
+  min-width: 375pt;
+  max-width: 750pt;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.center {
+  @include flexCenter;
+
+  .add-event-container::before {
+    content: "";
+    opacity: 0;
+  }
+}

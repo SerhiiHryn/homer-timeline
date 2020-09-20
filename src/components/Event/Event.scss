@@ -1,0 +1,145 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.event-year {
+  @include flexCenter;
+  font-weight: $semi-bold;
+  letter-spacing: -0.2pt;
+  line-height: 24pt;
+  color: #000;
+}
+
+.event-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.event-container:nth-of-type(even) {
+  justify-content: flex-start;
+
+  .event {
+    align-items: flex-start;
+    border-left: none;
+
+    &__title {
+      flex-direction: row-reverse;
+
+      &__text {
+        padding-left: 0;
+        padding-right: 8pt;
+      }
+
+      &__connector-line::after {
+        top: 50%;
+        left: calc(100% - calc(#{$dot-size} / 2) - 1.5pt);
+      }
+    }
+
+    &__description {
+      text-align: left;
+      padding-left: 0;
+      padding-right: 24pt;
+    }
+  }
+}
+
+.event {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &__thumbnail {
+    img {
+      width: $thumbnail-size;
+      height: $thumbnail-size;
+      border-radius: 4pt;
+      object-fit: cover;
+    }
+  }
+
+  &__tag {
+    display: inline-block;
+    font-weight: $medium;
+    font-size: 10pt;
+    letter-spacing: -0.25pt;
+    line-height: 12pt;
+    color: rgba($color: #000000, $alpha: 0.7);
+
+    padding: 4pt;
+    border-radius: 3pt;
+    background-color: #f2f2f2;
+  }
+
+  &__title {
+    display: flex;
+    width: 100%;
+
+    &__text {
+      @include truncate;
+      padding-left: 8pt;
+      font-weight: $semi-bold;
+      font-size: 15pt;
+      letter-spacing: -0.1pt;
+      line-height: 20pt;
+      color: #000;
+    }
+
+    &__connector-line {
+      flex-grow: 1;
+      min-width: 16pt;
+      position: relative;
+    }
+
+    &__connector-line::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-100%);
+      border-bottom: $connector-line-thickness solid $connector-line-color;
+      width: 100%;
+    }
+
+    &__connector-line::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(-#{$dot-size}/ 2 - 1.5pt);
+      height: $dot-size;
+      width: $dot-size;
+      background-color: $dot-color;
+      border-radius: 50%;
+      border: 2pt solid #fff;
+      z-index: 1;
+    }
+  }
+
+  &__description {
+    @include truncate;
+    width: 100%;
+    text-align: right;
+    padding-left: 24pt;
+
+    font-weight: $regular;
+    line-height: 16pt;
+    color: rgba($color: #000000, $alpha: 0.7);
+  }
+
+  &__date {
+    font-weight: $regular;
+    font-size: 8pt;
+    line-height: 9pt;
+    color: rgba($color: #000000, $alpha: 0.4);
+  }
+}
+
+.event::before {
+  @include statesLine(solid);
+}
+
+.event.future::before {
+  @include statesLine(dashed);
+}
