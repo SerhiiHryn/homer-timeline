@@ -68,7 +68,7 @@ const AddEvent = () => {
               onChange={inputChangeHandler} />
           </div>
           <div className="event-form__save-button">
-            <a onClick={addEventHandler}>Save and Publish</a>
+            <a href="" onClick={addEventHandler}>Save and Publish</a>
           </div>
         </div>
       </div>
