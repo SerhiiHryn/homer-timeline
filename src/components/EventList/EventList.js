@@ -2,10 +2,10 @@ import React from 'react';
 import Event from '../Event/Event';
 import './EventList.scss';
 
-const EventList = ({ events }) => {
+const EventList = ({ events, isFutureEvent }) => {
   const years = [];
   return (
-    <div className="events">
+    <div className={`events ${isFutureEvent ? 'future' : 'past'}`}>
       {
         events.map(e => {
           const eventYear = new Date(e.date).getFullYear();
@@ -17,8 +17,7 @@ const EventList = ({ events }) => {
 
           return (
             <React.Fragment key={e.id}>
-              {/* { eventYearWasRendered ? null : <div>{eventYear}</div>} */}
-              <Event event={e} showYear={showYear} />
+              <Event event={e} showYear={showYear} isFutureEvent={isFutureEvent} />
             </React.Fragment>
           );
         })

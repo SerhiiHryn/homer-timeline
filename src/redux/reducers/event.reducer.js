@@ -13,7 +13,11 @@ const initialState = {
   pastEvents: [],
   futureEvents: [],
   showNewEventForm: false,
-  newEvent: {},
+  newEvent: {
+    title: '',
+    description: '',
+    tag: '',
+  },
   loading: false,
   error: null,
 };
@@ -25,9 +29,13 @@ export const eventReducer = (state = initialState, action) => {
 
       if (utils.isFutureEvent(event.date)) {
         const futureEvents = [...state.futureEvents, event];
+        eventService.orderEvents(futureEvents);
+
         return { ...state, futureEvents };
       } else {
         const pastEvents = [...state.pastEvents, event];
+        eventService.orderEvents(pastEvents);
+
         return { ...state, pastEvents };
       }
     }

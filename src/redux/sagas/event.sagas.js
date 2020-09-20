@@ -8,8 +8,13 @@ function* addEventWorker(action) {
   try {
     yield put(eventActions.loadingStart());
     const event = yield call(eventService.addEvent, action.payload.data);
-    yield put(eventActions.showForm(false));
     yield put(eventActions.addEventSuccess(event));
+    yield put(eventActions.showForm(false));
+    yield put(eventActions.setNewEvent({
+      title: '',
+      description: '',
+      tag: '',
+    }));
   } catch (e) {
     yield put(eventActions.addEventError(e));
   } finally {

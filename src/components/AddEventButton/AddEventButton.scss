@@ -1,0 +1,26 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.add-event-container {
+  @include flexCenter;
+  position: relative;
+}
+
+.add-event-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  border-left: 1pt solid #ccc;
+  z-index: 2;
+}
+
+.add-button {
+  margin-bottom: 24pt;
+  z-index: 3;
+
+  img {
+    height: $add-event-button-size;
+    width: $add-event-button-size;
+  }
+}

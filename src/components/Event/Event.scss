@@ -7,6 +7,7 @@
   letter-spacing: -0.2pt;
   line-height: 24pt;
   color: #000;
+  background-color: white;
 }
 
 .event-container {
@@ -21,6 +22,10 @@
   .event {
     align-items: flex-start;
     border-left: none;
+
+    &__tag {
+      flex-direction: row-reverse;
+    }
 
     &__title {
       flex-direction: row-reverse;
@@ -60,16 +65,26 @@
   }
 
   &__tag {
-    display: inline-block;
-    font-weight: $medium;
-    font-size: 10pt;
-    letter-spacing: -0.25pt;
-    line-height: 12pt;
-    color: rgba($color: #000000, $alpha: 0.7);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 
-    padding: 4pt;
-    border-radius: 3pt;
-    background-color: #f2f2f2;
+    &__text {
+      @include truncate;
+      font-weight: $medium;
+      font-size: 10pt;
+      letter-spacing: -0.25pt;
+      line-height: 12pt;
+      color: rgba($color: #000000, $alpha: 0.7);
+
+      padding: 4pt;
+      border-radius: 3pt;
+      background-color: #f2f2f2;
+    }
+
+    &__spacer {
+      min-width: 16pt;
+    }
   }
 
   &__title {
@@ -134,12 +149,4 @@
     line-height: 9pt;
     color: rgba($color: #000000, $alpha: 0.4);
   }
-}
-
-.event::before {
-  @include statesLine(solid);
-}
-
-.event.future::before {
-  @include statesLine(dashed);
 }
