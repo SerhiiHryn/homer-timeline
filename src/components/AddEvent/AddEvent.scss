@@ -76,25 +76,20 @@
     &__save-button {
       @include flexCenter;
 
-      a {
+      button {
         background-color: #2e7aff;
-        border-radius: 28px;
         border: 1px solid #2363d1;
-        display: inline-block;
-        color: #ffffff;
-        font-family: Arial;
-        font-size: 10pt;
+        border-radius: 28px;
+        color: #fff;
         padding: 5px 7px;
-        text-decoration: none;
-        // text-shadow: 0px 1px 0px #2f6627;
         cursor: pointer;
       }
 
-      a:hover {
+      button:hover {
         background-color: #2662ca;
       }
 
-      a:active {
+      button:active {
         background-color: #1d4da0;
       }
     }
