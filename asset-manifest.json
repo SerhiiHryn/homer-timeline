@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/homer-timeline/static/css/main.c8f52f23.chunk.css",
+    "main.js": "/homer-timeline/static/js/main.90151f85.chunk.js",
+    "main.js.map": "/homer-timeline/static/js/main.90151f85.chunk.js.map",
+    "runtime-main.js": "/homer-timeline/static/js/runtime-main.89fb6010.js",
+    "runtime-main.js.map": "/homer-timeline/static/js/runtime-main.89fb6010.js.map",
+    "static/js/2.986554e3.chunk.js": "/homer-timeline/static/js/2.986554e3.chunk.js",
+    "static/js/2.986554e3.chunk.js.map": "/homer-timeline/static/js/2.986554e3.chunk.js.map",
+    "index.html": "/homer-timeline/index.html",
+    "precache-manifest.75b483928d5fba9ed5637f76ac70d069.js": "/homer-timeline/precache-manifest.75b483928d5fba9ed5637f76ac70d069.js",
+    "service-worker.js": "/homer-timeline/service-worker.js",
+    "static/css/main.c8f52f23.chunk.css.map": "/homer-timeline/static/css/main.c8f52f23.chunk.css.map",
+    "static/js/2.986554e3.chunk.js.LICENSE.txt": "/homer-timeline/static/js/2.986554e3.chunk.js.LICENSE.txt",
+    "static/media/add-event-button.svg": "/homer-timeline/static/media/add-event-button.c3e113c1.svg",
+    "static/media/thumbnail.jpg": "/homer-timeline/static/media/thumbnail.0e9f86f2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89fb6010.js",
+    "static/js/2.986554e3.chunk.js",
+    "static/css/main.c8f52f23.chunk.css",
+    "static/js/main.90151f85.chunk.js"
+  ]
+}
