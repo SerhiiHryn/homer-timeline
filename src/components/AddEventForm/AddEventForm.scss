@@ -5,6 +5,7 @@
   position: absolute;
   top: -100%;
   left: 50%;
+  min-width: 320px;
   transform: translateX(-50%) scale(0.2);
   background-color: white;
   padding: 10pt 15pt;
@@ -73,8 +74,6 @@
   &__error {
     font-size: 9pt;
     color: #f92525;
-    font-weight: $semi-bold;
-    padding-left: 15pt;
   }
 }
 

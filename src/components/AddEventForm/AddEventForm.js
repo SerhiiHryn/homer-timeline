@@ -27,6 +27,7 @@ const AddEventForm = () => {
   };
 
   const dateChangeHandler = date => {
+    setShowError(false);
     const dateString = JSON.stringify(date);
     dispatch(eventActions.setNewEvent({
       ...newEvent,
@@ -40,6 +41,7 @@ const AddEventForm = () => {
       return;
     }
 
+    setShowError(false);
     dispatch(eventActions.addEvent(newEvent));
   };
 
@@ -50,6 +52,8 @@ const AddEventForm = () => {
       description: '',
       tag: '',
     }));
+
+    setShowError(false);
     dispatch(eventActions.showForm(false));
   };
 
@@ -91,16 +95,7 @@ const AddEventForm = () => {
       </div>
       {
         showError
-          ?
-          (
-            <div className="event-form__error">
-              Please fill required fields:
-              <ul>
-                <li>Title</li>
-                <li>Date</li>
-              </ul>
-            </div>
-          )
+          ? <div className="event-form__error">The &#39;Title&#39; and the &#39;Date&#39; fields cannot be blank</div>
           : null
       }
     </div>
